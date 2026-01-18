@@ -275,8 +275,8 @@ Test-Path .\.gemini\GEMINI.md
 
 ## 📚 Additional Documentation
 
-- **Detailed Guide**: [docs/guia_implementacion.md](docs/guia_implementacion.md)
-- **Skills Reference**: [docs/resumen_skills_agents.md](docs/resumen_skills_agents.md)
+- **Detailed Guide**: [docs/implementation_guides.md](docs/implementation_guides.md)
+- **Skills Reference**: [docs/skills_reference.md](docs/skills_reference.md)
 
 ---
 
