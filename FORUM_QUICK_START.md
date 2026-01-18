@@ -6,7 +6,7 @@
 
 ### 1. Download and copy
 
-Copy the `Agents AI install in project/` folder to your project root.
+Copy the `Supercharge-your-AI-assistant-for-WEB-and-L2-DATAPACKS-dev.-/` folder to your project root.
 
 ### 2. Rename and structure
 
