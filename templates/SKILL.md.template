@@ -1,0 +1,60 @@
+---
+name: [skill-name]
+description: >
+  [One-line description of what this skill does].
+  Trigger: [When the AI should load this skill - keywords that trigger it].
+license: MIT
+metadata:
+  author: [your-name]
+  version: "1.0"
+  scope: [root, frontend, backend]
+  auto_invoke: "[Keywords for auto-invoke table]"
+allowed-tools: Read, Edit, Write, Glob, Grep, Bash
+---
+
+## When to Use
+
+- [Situation 1 when this skill applies]
+- [Situation 2]
+- [Situation 3]
+
+## Directory Structure
+
+```
+src/
+├── [folder1]/        # Description
+├── [folder2]/        # Description
+└── [folder3]/        # Description
+```
+
+## Critical Patterns
+
+### [Pattern Name 1]
+
+```typescript
+// Example code showing the pattern
+```
+
+### [Pattern Name 2]
+
+```typescript
+// Another example
+```
+
+## Naming Conventions
+
+| Type | Convention | Example |
+|------|------------|---------|
+| [Type1] | [Convention] | `Example.tsx` |
+| [Type2] | [Convention] | `useExample.ts` |
+
+## Commands
+
+```bash
+npm run [command1]    # Description
+npm run [command2]    # Description
+```
+
+## Resources
+
+- [Link to documentation if applicable]

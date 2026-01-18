@@ -1,5 +1,3 @@
-# Supercharge-your-AI-assistant-for-WEB-and-L2-DATAPACKS-dev.-
-
 # 🤖 AI Skills Starter Kit
 
 > Portable kit to implement the Skills and AGENTS.md system in any project
@@ -286,4 +284,3 @@ Test-Path .\.gemini\GEMINI.md
 
 - [agentskills.io](https://agentskills.io) - Skills standard
 - Reference implementation: `../skills/`
-

@@ -1,0 +1,135 @@
+# [PROJECT_NAME] - Repository Guidelines
+
+> **Single Source of Truth** - This file is the master for all AI assistants.
+> Run `./skills/setup.ps1` to sync to Claude, Gemini, and GitHub Copilot.
+
+## How to Use This Guide
+
+- Start here for cross-project norms
+- Each component has its own `AGENTS.md` with specific guidelines (`frontend/AGENTS.md`, `backend/AGENTS.md`)
+- Component docs override this file when guidance conflicts
+
+---
+
+## Available Skills
+
+### Generic Skills (Any Project)
+
+| Skill | Description | File |
+|-------|-------------|------|
+| `react-19` | React 19 patterns, hooks, components | [SKILL.md](skills/react-19/SKILL.md) |
+| `typescript` | TypeScript patterns, types, generics | [SKILL.md](skills/typescript/SKILL.md) |
+| `tailwind-4` | Tailwind CSS v4 patterns | [SKILL.md](skills/tailwind-4/SKILL.md) |
+| `vite` | Vite build tool configuration | [SKILL.md](skills/vite/SKILL.md) |
+| `zustand-5` | Zustand 5 state management | [SKILL.md](skills/zustand-5/SKILL.md) |
+| `i18next` | i18next internationalization | [SKILL.md](skills/i18next/SKILL.md) |
+| `react-router` | React Router v7 navigation | [SKILL.md](skills/react-router/SKILL.md) |
+| `zod-4` | Zod validation schemas | [SKILL.md](skills/zod-4/SKILL.md) |
+| `ioredis` | Redis caching with ioredis | [SKILL.md](skills/ioredis/SKILL.md) |
+| `jwt` | JWT authentication patterns | [SKILL.md](skills/jwt/SKILL.md) |
+| `skill-creator` | Create new AI agent skills | [SKILL.md](skills/skill-creator/SKILL.md) |
+
+### [PROJECT_NAME]-Specific Skills
+
+| Skill | Description | File |
+|-------|-------------|------|
+| `[project]-frontend` | Frontend conventions | [SKILL.md](skills/[project]-frontend/SKILL.md) |
+| `[project]-backend` | Backend API patterns | [SKILL.md](skills/[project]-backend/SKILL.md) |
+| `[project]-tests` | Testing patterns | [SKILL.md](skills/[project]-tests/SKILL.md) |
+
+---
+
+## Auto-invoke Skills
+
+> ⚠️ **CRITICAL**: When performing these actions, ALWAYS invoke the corresponding skill FIRST
+
+| Action | Skill |
+|--------|-------|
+| Creating/modifying React components | `[project]-frontend` + `react-19` |
+| Writing TypeScript types/interfaces | `typescript` |
+| Styling with Tailwind classes | `tailwind-4` |
+| Configuring Vite or build | `vite` |
+| Using Zustand stores/state | `zustand-5` |
+| Adding translations/i18n | `i18next` |
+| Creating routes/navigation | `react-router` |
+| Building API endpoints | `[project]-backend` |
+| Creating Express routes/controllers | `[project]-backend` |
+| Validating data with Zod | `zod-4` |
+| Working with Redis/caching | `ioredis` |
+| Authentication/JWT tokens | `jwt` |
+| Writing tests | `[project]-tests` |
+| Creating new skills | `skill-creator` |
+
+---
+
+## Project Overview
+
+**[PROJECT_NAME]** - [Brief description]
+
+### Tech Stack
+
+| Component | Technology |
+|-----------|------------|
+| Frontend | [React 19, TypeScript, TailwindCSS 4, Vite] |
+| Backend | [Node.js, Express, TypeScript] |
+| Database | [MySQL/PostgreSQL/MongoDB] |
+| Testing | [Jest/Vitest/k6] |
+| Deployment | [Nginx, PM2, Docker] |
+
+### Directory Structure
+
+```
+[project]/
+├── frontend/          # Frontend app
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       └── ...
+├── backend/           # Backend API
+│   └── src/
+│       ├── routes/
+│       ├── controllers/
+│       └── ...
+├── docs/              # Documentation
+├── tests/             # Tests
+└── skills/            # AI agent skills
+```
+
+---
+
+## Development Guidelines
+
+### Setup
+
+```bash
+# Frontend
+cd frontend
+npm install
+npm run dev
+
+# Backend
+cd backend
+npm install
+npm run dev
+```
+
+### Code Quality
+
+```bash
+npm run lint
+npm run build
+npm run test
+```
+
+---
+
+## Commit & Pull Request Guidelines
+
+Follow conventional-commit style: `<type>[scope]: <description>`
+
+**Types:** `feat`, `fix`, `docs`, `chore`, `perf`, `refactor`, `style`, `test`
+
+**Examples:**
+- `feat(frontend): add user profile component`
+- `fix(backend): resolve database connection issue`
+- `docs: update README`
