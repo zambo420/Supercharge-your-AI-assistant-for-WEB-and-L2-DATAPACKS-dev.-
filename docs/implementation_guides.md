@@ -1,24 +1,24 @@
-# 🚀 Guía de Implementación: Skills y AGENTS.md en Proyectos Existentes
+# 🚀 Implementation Guide: Skills and AGENTS.md in Existing Projects
 
-Esta guía te llevará paso a paso para implementar el sistema de Skills y AGENTS.md en tus proyectos.
-
----
-
-## 📋 Checklist Rápido
-
-- [ ] **Paso 1**: Crear estructura de carpetas
-- [ ] **Paso 2**: Crear AGENTS.md root
-- [ ] **Paso 3**: Crear skills genéricas que uses frecuentemente
-- [ ] **Paso 4**: Crear skills específicas de tu proyecto
-- [ ] **Paso 5**: Configurar script de setup multi-herramienta
-- [ ] **Paso 6**: (Opcional) Crear AGENTS.md por componente
+This guide will walk you step by step to implement the Skills and AGENTS.md system in your projects.
 
 ---
 
-## Paso 1: Crear Estructura de Carpetas
+## 📋 Quick Checklist
+
+- [ ] **Step 1**: Create folder structure
+- [ ] **Step 2**: Create root AGENTS.md
+- [ ] **Step 3**: Create generic skills you use frequently
+- [ ] **Step 4**: Create project-specific skills
+- [ ] **Step 5**: Configure multi-tool setup script
+- [ ] **Step 6**: (Optional) Create AGENTS.md per component
+
+---
+
+## Step 1: Create Folder Structure
 
 ```powershell
-# En la raíz de tu proyecto
+# In your project root
 mkdir skills
 mkdir skills\skill-creator
 mkdir .claude
@@ -26,15 +26,15 @@ mkdir .gemini
 mkdir .github
 ```
 
-### Estructura Final Esperada
+### Expected Final Structure
 ```
-📁 tu-proyecto/
+📁 your-project/
 ├── 📄 AGENTS.md
 ├── 📁 skills/
 │   ├── 📄 setup.sh
 │   ├── 📁 skill-creator/
 │   │   └── 📄 SKILL.md
-│   ├── 📁 [tus-skills]/
+│   ├── 📁 [your-skills]/
 │   │   └── 📄 SKILL.md
 ├── 📁 .claude/
 ├── 📁 .gemini/
@@ -43,12 +43,12 @@ mkdir .github
 
 ---
 
-## Paso 2: Crear AGENTS.md Root
+## Step 2: Create Root AGENTS.md
 
-Crea `AGENTS.md` en la raíz de tu proyecto:
+Create `AGENTS.md` in your project root:
 
 ```markdown
-# [Nombre del Proyecto] - Repository Guidelines
+# [Project Name] - Repository Guidelines
 
 ## How to Use This Guide
 - Start here for cross-project norms
@@ -67,40 +67,40 @@ Crea `AGENTS.md` en la raíz de tu proyecto:
 ### Project-Specific Skills
 | Skill | Description | URL |
 |-------|-------------|-----|
-<!-- Agregar aquí tus skills específicas -->
+<!-- Add your specific skills here -->
 
 ---
 
 ### Auto-invoke Skills
 
-> ⚠️ **CRÍTICO**: Sin esta tabla, los modelos tratan las skills como sugerencias
+> ⚠️ **CRITICAL**: Without this table, models treat skills as suggestions
 
 When performing these actions, ALWAYS invoke the corresponding skill FIRST:
 
 | Action | Skill |
 |--------|-------|
 | Creating new skills | `skill-creator` |
-<!-- Agregar aquí más acciones y skills -->
+<!-- Add more actions and skills here -->
 
 ---
 
 ## Project Overview
 
-[Descripción breve del proyecto]
+[Brief project description]
 
 ### Tech Stack
 | Component | Technology |
 |-----------|------------|
-| Frontend | [Tu stack] |
-| Backend | [Tu stack] |
-| Database | [Tu stack] |
+| Frontend | [Your stack] |
+| Backend | [Your stack] |
+| Database | [Your stack] |
 
 ### Directory Structure
 ```
-tu-proyecto/
-├── src/          # Código fuente
+your-project/
+├── src/          # Source code
 ├── tests/        # Tests
-├── docs/         # Documentación
+├── docs/         # Documentation
 └── skills/       # AI Skills
 ```
 
@@ -110,7 +110,7 @@ tu-proyecto/
 
 ### Setup
 ```bash
-# Comandos de instalación
+# Installation commands
 npm install
 ```
 
@@ -132,9 +132,9 @@ Follow conventional-commit style: `<type>[scope]: <description>`
 
 ---
 
-## Paso 3: Crear Skill Creator (Meta-Skill)
+## Step 3: Create Skill Creator (Meta-Skill)
 
-Crea `skills/skill-creator/SKILL.md`:
+Create `skills/skill-creator/SKILL.md`:
 
 ```markdown
 ---
@@ -144,7 +144,7 @@ description: >
   Trigger: When user asks to create a new skill, add agent instructions, or document patterns for AI.
 license: MIT
 metadata:
-  author: [tu-nombre]
+  author: [your-name]
   version: "1.0"
   scope: [root]
   auto_invoke: "Creating new skills"
@@ -170,7 +170,7 @@ description: >
   Trigger: {When to use}.
 license: MIT
 metadata:
-  author: [tu-nombre]
+  author: [your-name]
   version: "1.0"
   scope: [root, ui, api]
   auto_invoke: "{keywords}"
@@ -178,19 +178,19 @@ allowed-tools: Read, Edit, Write, Glob, Grep, Bash
 ---
 
 ## When to Use
-- [Cuándo usar esta skill]
+- [When to use this skill]
 
 ## Critical Patterns
-[Reglas importantes]
+[Important rules]
 
 ## Code Examples
 ```code
-[Ejemplos mínimos]
+[Minimal examples]
 ```
 
 ## Commands
 ```bash
-[Comandos comunes]
+[Common commands]
 ```
 ```
 
@@ -203,21 +203,21 @@ allowed-tools: Read, Edit, Write, Glob, Grep, Bash
 
 ---
 
-## Paso 4: Crear Skills Específicas
+## Step 4: Create Specific Skills
 
-### Ejemplo: Skill para tu Frontend
+### Example: Skill for your Frontend
 
-Crea `skills/mi-proyecto-ui/SKILL.md`:
+Create `skills/my-project-ui/SKILL.md`:
 
 ```markdown
 ---
-name: mi-proyecto-ui
+name: my-project-ui
 description: >
-  UI patterns and conventions for [Mi Proyecto].
+  UI patterns and conventions for [My Project].
   Trigger: When creating/modifying React components, pages, or UI elements.
 license: MIT
 metadata:
-  author: [tu-nombre]
+  author: [your-name]
   version: "1.0"
   scope: [ui]
   auto_invoke: "React components / UI"
@@ -229,11 +229,11 @@ allowed-tools: Read, Edit, Write, Glob, Grep, Bash
 ```
 src/
 ├── components/
-│   ├── ui/           # Componentes reutilizables
-│   └── features/     # Componentes de features
-├── pages/            # Páginas
+│   ├── ui/           # Reusable components
+│   └── features/     # Feature components
+├── pages/            # Pages
 ├── hooks/            # Custom hooks
-└── lib/              # Utilidades
+└── lib/              # Utilities
 ```
 
 ## Component Pattern
@@ -256,7 +256,7 @@ export function Button({ variant = 'primary', children }: ButtonProps) {
 
 ## Naming Conventions
 - Components: PascalCase (`MyComponent.tsx`)
-- Hooks: camelCase con `use` prefix (`useMyHook.ts`)
+- Hooks: camelCase with `use` prefix (`useMyHook.ts`)
 - Utils: camelCase (`myUtil.ts`)
 
 ## Commands
@@ -268,19 +268,19 @@ npm run test
 ```
 ```
 
-### Ejemplo: Skill para Testing
+### Example: Skill for Testing
 
-Crea `skills/mi-proyecto-tests/SKILL.md`:
+Create `skills/my-project-tests/SKILL.md`:
 
 ```markdown
 ---
-name: mi-proyecto-tests
+name: my-project-tests
 description: >
-  Testing patterns for [Mi Proyecto].
+  Testing patterns for [My Project].
   Trigger: When writing tests, creating test files, or debugging test failures.
 license: MIT
 metadata:
-  author: [tu-nombre]
+  author: [your-name]
   version: "1.0"
   scope: [root]
   auto_invoke: "Writing tests"
@@ -288,7 +288,7 @@ allowed-tools: Read, Edit, Write, Glob, Grep, Bash
 ---
 
 ## Test File Location
-- Unit tests: junto al archivo (`MyComponent.test.tsx`)
+- Unit tests: alongside the file (`MyComponent.test.tsx`)
 - E2E tests: `tests/e2e/`
 
 ## Test Pattern
@@ -321,31 +321,31 @@ npm run test:coverage  # Coverage report
 
 ---
 
-## Paso 5: Crear Script de Setup
+## Step 5: Create Setup Script
 
-Crea `skills/setup.sh`:
+Create `skills/setup.sh`:
 
 ```bash
 #!/bin/bash
-# skills/setup.sh - Configura skills para todos los AI assistants
+# skills/setup.sh - Configure skills for all AI assistants
 
 set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 
-echo "🤖 Configurando AI Skills..."
+echo "🤖 Configuring AI Skills..."
 echo "============================"
 
 # Claude Code
 setup_claude() {
-    echo "Configurando Claude..."
+    echo "Configuring Claude..."
     mkdir -p "$REPO_ROOT/.claude"
     
-    # Crear symlink a skills (eliminar si existe)
+    # Create symlink to skills (remove if exists)
     rm -rf "$REPO_ROOT/.claude/skills" 2>/dev/null || true
     ln -sf "$SCRIPT_DIR" "$REPO_ROOT/.claude/skills"
     
-    # Copiar AGENTS.md como CLAUDE.md
+    # Copy AGENTS.md as CLAUDE.md
     cp "$REPO_ROOT/AGENTS.md" "$REPO_ROOT/.claude/CLAUDE.md"
     echo "  ✓ .claude/skills -> skills/"
     echo "  ✓ AGENTS.md -> .claude/CLAUDE.md"
@@ -353,7 +353,7 @@ setup_claude() {
 
 # Gemini CLI
 setup_gemini() {
-    echo "Configurando Gemini..."
+    echo "Configuring Gemini..."
     mkdir -p "$REPO_ROOT/.gemini"
     
     rm -rf "$REPO_ROOT/.gemini/skills" 2>/dev/null || true
@@ -366,25 +366,25 @@ setup_gemini() {
 
 # Codex (OpenAI)
 setup_codex() {
-    echo "Configurando Codex..."
+    echo "Configuring Codex..."
     mkdir -p "$REPO_ROOT/.codex"
     
     rm -rf "$REPO_ROOT/.codex/skills" 2>/dev/null || true
     ln -sf "$SCRIPT_DIR" "$REPO_ROOT/.codex/skills"
     echo "  ✓ .codex/skills -> skills/"
-    echo "  ✓ Codex usa AGENTS.md nativo"
+    echo "  ✓ Codex uses native AGENTS.md"
 }
 
 # GitHub Copilot
 setup_copilot() {
-    echo "Configurando GitHub Copilot..."
+    echo "Configuring GitHub Copilot..."
     mkdir -p "$REPO_ROOT/.github"
     
     cp "$REPO_ROOT/AGENTS.md" "$REPO_ROOT/.github/copilot-instructions.md"
     echo "  ✓ AGENTS.md -> .github/copilot-instructions.md"
 }
 
-# Ejecutar todos
+# Run all
 setup_claude
 setup_gemini
 setup_codex
@@ -392,43 +392,43 @@ setup_copilot
 
 SKILL_COUNT=$(find "$SCRIPT_DIR" -maxdepth 2 -name "SKILL.md" | wc -l)
 echo ""
-echo "✅ $SKILL_COUNT skills configuradas para todos los AI assistants!"
+echo "✅ $SKILL_COUNT skills configured for all AI assistants!"
 echo ""
-echo "Nota: Reinicia tu AI assistant para cargar las skills."
+echo "Note: Restart your AI assistant to load the skills."
 ```
 
-### Para Windows (PowerShell)
+### For Windows (PowerShell)
 
-Crea `skills/setup.ps1`:
+Create `skills/setup.ps1`:
 
 ```powershell
-# skills/setup.ps1 - Configura skills para AI assistants (Windows)
+# skills/setup.ps1 - Configure skills for AI assistants (Windows)
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $RepoRoot = Split-Path -Parent $ScriptDir
 
-Write-Host "🤖 Configurando AI Skills..." -ForegroundColor Cyan
+Write-Host "🤖 Configuring AI Skills..." -ForegroundColor Cyan
 Write-Host "============================"
 
 # Claude Code
 function Setup-Claude {
-    Write-Host "Configurando Claude..." -ForegroundColor Yellow
+    Write-Host "Configuring Claude..." -ForegroundColor Yellow
     $claudeDir = Join-Path $RepoRoot ".claude"
     New-Item -ItemType Directory -Force -Path $claudeDir | Out-Null
     
-    # Copiar skills (en Windows usamos junction o copia)
+    # Copy skills (on Windows we use junction or copy)
     $skillsTarget = Join-Path $claudeDir "skills"
     if (Test-Path $skillsTarget) { Remove-Item -Recurse -Force $skillsTarget }
     Copy-Item -Recurse $ScriptDir $skillsTarget
     
-    # Copiar AGENTS.md
+    # Copy AGENTS.md
     Copy-Item (Join-Path $RepoRoot "AGENTS.md") (Join-Path $claudeDir "CLAUDE.md")
-    Write-Host "  ✓ Claude configurado" -ForegroundColor Green
+    Write-Host "  ✓ Claude configured" -ForegroundColor Green
 }
 
 # Gemini CLI
 function Setup-Gemini {
-    Write-Host "Configurando Gemini..." -ForegroundColor Yellow
+    Write-Host "Configuring Gemini..." -ForegroundColor Yellow
     $geminiDir = Join-Path $RepoRoot ".gemini"
     New-Item -ItemType Directory -Force -Path $geminiDir | Out-Null
     
@@ -437,35 +437,35 @@ function Setup-Gemini {
     Copy-Item -Recurse $ScriptDir $skillsTarget
     
     Copy-Item (Join-Path $RepoRoot "AGENTS.md") (Join-Path $geminiDir "GEMINI.md")
-    Write-Host "  ✓ Gemini configurado" -ForegroundColor Green
+    Write-Host "  ✓ Gemini configured" -ForegroundColor Green
 }
 
 # GitHub Copilot
 function Setup-Copilot {
-    Write-Host "Configurando GitHub Copilot..." -ForegroundColor Yellow
+    Write-Host "Configuring GitHub Copilot..." -ForegroundColor Yellow
     $githubDir = Join-Path $RepoRoot ".github"
     New-Item -ItemType Directory -Force -Path $githubDir | Out-Null
     
     Copy-Item (Join-Path $RepoRoot "AGENTS.md") (Join-Path $githubDir "copilot-instructions.md")
-    Write-Host "  ✓ GitHub Copilot configurado" -ForegroundColor Green
+    Write-Host "  ✓ GitHub Copilot configured" -ForegroundColor Green
 }
 
-# Ejecutar
+# Run
 Setup-Claude
 Setup-Gemini
 Setup-Copilot
 
 $skillCount = (Get-ChildItem -Path $ScriptDir -Recurse -Filter "SKILL.md").Count
 Write-Host ""
-Write-Host "✅ $skillCount skills configuradas!" -ForegroundColor Green
-Write-Host "Nota: Reinicia tu AI assistant para cargar las skills." -ForegroundColor Cyan
+Write-Host "✅ $skillCount skills configured!" -ForegroundColor Green
+Write-Host "Note: Restart your AI assistant to load the skills." -ForegroundColor Cyan
 ```
 
 ---
 
-## Paso 6: (Opcional) AGENTS.md por Componente
+## Step 6: (Optional) AGENTS.md per Component
 
-Si tienes un monorepo, crea AGENTS.md específicos:
+If you have a monorepo, create specific AGENTS.md files:
 
 ### `frontend/AGENTS.md`
 ```markdown
@@ -474,12 +474,12 @@ Si tienes un monorepo, crea AGENTS.md específicos:
 ## Available Skills
 | Skill | Description | URL |
 |-------|-------------|-----|
-| `mi-proyecto-ui` | React components | [SKILL.md](../skills/mi-proyecto-ui/SKILL.md) |
+| `my-project-ui` | React components | [SKILL.md](../skills/my-project-ui/SKILL.md) |
 
 ### Auto-invoke Skills
 | Action | Skill |
 |--------|-------|
-| Creating React components | `mi-proyecto-ui` |
+| Creating React components | `my-project-ui` |
 
 ## Tech Stack
 - React 18
@@ -497,12 +497,12 @@ Si tienes un monorepo, crea AGENTS.md específicos:
 ## Available Skills
 | Skill | Description | URL |
 |-------|-------------|-----|
-| `mi-proyecto-api` | API patterns | [SKILL.md](../skills/mi-proyecto-api/SKILL.md) |
+| `my-project-api` | API patterns | [SKILL.md](../skills/my-project-api/SKILL.md) |
 
 ### Auto-invoke Skills
 | Action | Skill |
 |--------|-------|
-| Creating endpoints | `mi-proyecto-api` |
+| Creating endpoints | `my-project-api` |
 
 ## Tech Stack
 - Node.js
@@ -515,48 +515,48 @@ Si tienes un monorepo, crea AGENTS.md específicos:
 
 ---
 
-## 🔄 Flujo de Trabajo Diario
+## 🔄 Daily Workflow
 
-### Cuando necesites crear una nueva skill:
+### When you need to create a new skill:
 
-1. Decirle al agente: "Lee la skill `skill-creator` y crea una nueva skill para [X]"
-2. El agente creará la estructura correcta
-3. Recordar agregar la skill a AGENTS.md (tabla Available Skills + Auto-invoke)
-4. Ejecutar `./skills/setup.sh` para sincronizar
+1. Tell the agent: "Read the `skill-creator` skill and create a new skill for [X]"
+2. The agent will create the correct structure
+3. Remember to add the skill to AGENTS.md (Available Skills + Auto-invoke tables)
+4. Run `./skills/setup.sh` to sync
 
-### Cuando agregues una skill:
+### When you add a skill:
 
 ```markdown
-<!-- En AGENTS.md, agregar a Available Skills -->
-| `nueva-skill` | Descripción | [SKILL.md](skills/nueva-skill/SKILL.md) |
+<!-- In AGENTS.md, add to Available Skills -->
+| `new-skill` | Description | [SKILL.md](skills/new-skill/SKILL.md) |
 
-<!-- Y agregar a Auto-invoke -->
-| Action relacionada | `nueva-skill` |
+<!-- And add to Auto-invoke -->
+| Related action | `new-skill` |
 ```
 
 ---
 
-## ✅ Verificación Final
+## ✅ Final Verification
 
-Después de implementar, verifica:
+After implementing, verify:
 
-1. [ ] `AGENTS.md` existe en la raíz
-2. [ ] `skills/` tiene al menos `skill-creator/SKILL.md`
-3. [ ] Tabla **Auto-invoke** tiene entradas
-4. [ ] `setup.sh` corre sin errores
-5. [ ] `.claude/`, `.gemini/`, `.github/` se crearon correctamente
+1. [ ] `AGENTS.md` exists at root
+2. [ ] `skills/` has at least `skill-creator/SKILL.md`
+3. [ ] **Auto-invoke** table has entries
+4. [ ] `setup.sh` runs without errors
+5. [ ] `.claude/`, `.gemini/`, `.github/` were created correctly
 
-### Test Rápido
+### Quick Test
 
-Preguntarle al agente:
-> "¿Qué skills tienes disponibles para este proyecto?"
+Ask the agent:
+> "What skills do you have available for this project?"
 
-Debería listar las skills de tu AGENTS.md.
+It should list the skills from your AGENTS.md.
 
 ---
 
-## 📚 Recursos
+## 📚 Resources
 
 - [Agent Skills Spec](https://agentskills.io)
-- [Prowler Cloud (Ejemplo)](https://github.com/prowler-cloud/prowler)
+- [Prowler Cloud (Example)](https://github.com/prowler-cloud/prowler)
 - [Gentleman.Dots (Configs)](https://github.com/Gentleman-Programming/Gentleman.Dots)
