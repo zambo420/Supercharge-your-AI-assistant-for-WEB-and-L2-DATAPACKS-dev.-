@@ -283,4 +283,7 @@ Test-Path .\.gemini\GEMINI.md
 ## 🔗 Sources
 
 - [agentskills.io](https://agentskills.io) - Skills standard
+- [Gentleman Programming](https://www.youtube.com/watch?v=Nvn6s3r9ZAw&list=LL&index=1) - Base font
+- [Supercharge-your-AI-assistant-for-WEB-and-L2-DATAPACKS-dev.-](https://github.com/zambo420/Supercharge-your-AI-assistant-for-WEB-and-L2-DATAPACKS-dev.-.git) - Download project
 - Reference implementation: `../skills/`
+
